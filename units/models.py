@@ -1,6 +1,8 @@
 from django.db import models
+from django.conf import settings
 
 # Create your models here.
+User = settings.AUTH_USER_MODEL
 
 
 class Unit(models.Model):
@@ -10,6 +12,8 @@ class Unit(models.Model):
     image = models.ImageField(
         upload_to='musonge/', blank=True, null=True)
     date_added = models.DateTimeField(auto_now_add=True)
+    owner = models.ForeignKey(
+        User, related_name='units', on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
