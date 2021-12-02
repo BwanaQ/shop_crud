@@ -2,6 +2,10 @@ from django.views.generic import ListView, DetailView, CreateView,UpdateView,Del
 from django.urls import reverse_lazy
 from .models import Category, Product
 from django.contrib.messages.views import SuccessMessageMixin
+
+"""
+crud views
+"""
 class CategoryIndexView(ListView):
     model = Category
     queryset = Category.objects.all()
