@@ -2,13 +2,21 @@
 {% block content %}
 <div class="container">
     <div class="row mt-2">
+        <div class="col-12">
+            <a
+              href="{% url 'category-create-view' %}"
+              class="btn btn-primary btn-sm btn-circle float-start m-2 shadow"
+              ><i class="fa fa-plus" aria-hidden="true"></i
+            ></a>
+          </div>
+        </div>
         {% if object_list %}
             {%for cat in index_category_list %}
                 <div class="col-lg-4 mt-2">
                     <div class="card" >
                         <div class="card-body">
                           <h5 class="card-title">{{cat.name}}</h5>
-                          <a href="{% url 'category_detail_view' slug=cat.slug %}" class="btn btn-secondary">View Details</a>
+                          <a href="{% url 'category-detail-view' slug=cat.slug %}" class="btn btn-secondary">View Details</a>
                         </div>
                       </div>
                 </div>
