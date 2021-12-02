@@ -20,7 +20,7 @@ class CategoryCreateView(CreateView):
     success_message='The Category was created successfully'    
 class CategoryUpdateView(UpdateView):
     model = Category
-    success_url = reverse_lazy('home')
+    success_url = reverse_lazy('category-home')
     fields = ['name', 'slug']
     success_message='The Category was created successfully'
 

@@ -5,11 +5,10 @@
         <div class="col-12">
             <a
               href="{% url 'category-create-view' %}"
-              class="btn btn-primary btn-sm btn-circle float-start m-2 shadow"
-              ><i class="fa fa-plus" aria-hidden="true"></i
-            ></a>
+              class="btn btn-success btn-sm  float-start m-2 shadow"
+              ><strong>Add Category</strong></a>
           </div>
-        </div>
+        
         {% if object_list %}
             {%for cat in index_category_list %}
                 <div class="col-lg-4 mt-2">
