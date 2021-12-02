@@ -1,13 +1,14 @@
 {% extends 'shop/base.html' %}
 {% block content %}
 <div class="container">
-    <div class="card" style="width: 18rem;">
+    <div class="card mt-2" >
         <div class="card-body">
             <h5 class="card-title"><strong>Name: </strong>{{category.name}}</h5>
             <p class="card-title text-muted"><strong>Slug: </strong>{{category.slug}}</p>
             <div class="btn-group">
+                <a class="btn btn-sm btn-outline-success" href="{% url 'category-home' %}" role="button">Back to Categories</a>
                 <a class="btn btn-sm btn-outline-warning" href="{% url 'category-update-view' category.slug %}" role="button">Edit</a>
-                      <a class="btn btn-sm btn-outline-danger" href="{%url 'category-delete-view' category.slug %}" role="button">Delete</a>
+                <a class="btn btn-sm btn-outline-danger" href="{%url 'category-delete-view' category.slug %}" role="button">Delete</a>
             </div>    
       </div>
 

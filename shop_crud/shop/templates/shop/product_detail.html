@@ -1,0 +1,24 @@
+{% extends 'shop/base.html' %}
+{%block content %}
+<div class="container">
+    <div class="row">
+        <h3 class="text-center">{{object.name}}</h3>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-9 mt-2 text-center">
+            
+            <img class="img-fluid rounded" src="{{object.image.url}}" alt="{{object.name}}">
+        </div>
+        <div class="col-lg-3 col-md-12 mt-2">
+            <h2> Product Detail</h2>
+            <p><strong>Category: </strong>{{object.category.name}} </p>
+            <p><strong>Slug: </strong>{{object.slug}} </p>
+            <p><strong>Description: </strong>{{object.description}} </p>
+            <p class="text-muted"><strong>Price: </strong>KES. {{object.price}} </p>
+            <h3>Actions</h3>
+            <a href="{% url 'product-home' %}" class="btn btn-success btn-sm btn-block">Back to products</a>
+            <a href="{% url 'product-update-view' product.slug %}" class="btn btn-warning btn-sm btn-block">Edit</a>
+            <a href="{% url 'product-delete-view' product.slug %}" class="btn btn-danger btn-sm btn-block">Detele</a>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

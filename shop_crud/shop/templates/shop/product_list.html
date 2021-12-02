@@ -1,0 +1,28 @@
+{% extends 'shop/base.html' %}
+{% block content %}
+<div class="container">
+    <div class="row mt-2">
+        <div class="col-12">
+            <a
+              href="{% url 'product-create-view' %}"
+              class="btn btn-success btn-sm  float-start m-2 shadow"
+              ><strong>Add Product</strong></a>
+          </div>
+        
+        {% if object_list %}
+            {%for prod in object_list %}
+                <div class="col-lg-4 mt-2">
+                    <div class="card" >
+                        <div class="card-body">
+                          <h5 class="card-title">{{prod.name}}</h5>
+                          <a href="{% url 'product-detail-view' slug=prod.slug %}" class="btn btn-secondary">View Details</a>
+                        </div>
+                      </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            No Category Found
+        {% endif %}            
+    </div>    
+</div>
+{% endblock %}
