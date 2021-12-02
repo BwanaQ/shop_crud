@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-
+import django_heroku
 from pathlib import Path
 import os
 
@@ -139,7 +139,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 PROJECT_ROOT   =   os.path.join(os.path.abspath(__file__))
-STATIC_ROOT  =   os.path.join(PROJECT_ROOT, 'staticfiles')
+STATIC_ROOT  =   os.path.join(PROJECT_ROOT, 'static')
 STATIC_URL = '/static/'
 
 # Extra lookup directories for collectstatic to find static files
@@ -162,5 +162,4 @@ CLOUDINARY_STORAGE = {
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap'
-import django_heroku
 django_heroku.settings(locals())
