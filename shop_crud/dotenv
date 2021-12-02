@@ -1,0 +1,4 @@
+export SECRET_KEY='secret-key-goes-here'
+export CLOUD_NAME='<cloudinary-cloud-name>'
+export API_KEY='<cloudinary-api-key>'
+export API_SECRET='<cloudinary-secret>'
